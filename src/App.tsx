@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState} from 'react';
 
 // components
 import QuestionCard from './components/QuestionCard';
@@ -10,6 +10,7 @@ const App =() => {
 
   }
 
+  
   const checkAnswer = (e:React.MouseEvent <HTMLButtonElement>) => {
 
   }
@@ -27,7 +28,7 @@ const App =() => {
      </button>
      <p className="score">Score:</p>
      <p>Loading Questions ...</p>
-       <QuestionCard question={''} answer={[]} callback={undefined} userAnswer={''} questionNr={0} totalQuestions={0}/>
+       <QuestionCard/>
 
        <button className='next' onClick={nextQuestion}>
           Next Question
