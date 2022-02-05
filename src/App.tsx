@@ -5,6 +5,14 @@ import { QuestionState,Difficulty } from './API';
 import QuestionCard from './components/QuestionCard';
 
 
+type AswerObject = {
+  question:string,
+  answer:string,
+  correct:boolean,
+  correctAnswer:string;
+}
+
+
 const TOTAL_QUESTIONS = 10;
 
 const App =() => {
@@ -12,14 +20,26 @@ const App =() => {
  const [loading,setLoading] = useState(false);
  const [questions,setQuestions] = useState<QuestionState[]>([]);
  const [number,setNumber] = useState(0);
- const [userAnswers,setUserAnswers] = useState([])
+ const [userAnswers,setUserAnswers] = useState<AswerObject[]>([])
  const [score,setScore] = useState(0)
  const [gameOver,setGameOver] = useState(true)
  
- console.log(fetchQuizQuestions(TOTAL_QUESTIONS,Difficulty.MEDIUM));
+ console.log(questions);
 
 
   const startTrivia = async () =>{
+    setLoading(true);
+    setGameOver(false); 
+
+    const newQuestions=  await fetchQuizQuestions(
+      TOTAL_QUESTIONS,
+      Difficulty.EASY
+    );
+    setQuestions(newQuestions);
+    setScore(0);
+    setUserAnswers([]);
+    setNumber(0)
+    setLoading(false)
 
   }
 
