@@ -1,8 +1,13 @@
 import React from "react"
 
-const API = ()=>{
+
+export enum Difficulty{
+    EASY = "easy",
+    MEDIUM = "medium",
+    HARD = "hard"
+}
+export const fetchQuizQuestions = async(amount:number, difficulty:)=>{
 
 }
 
-export default API;
 
