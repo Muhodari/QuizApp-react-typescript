@@ -3,6 +3,8 @@ import { fetchQuizQuestions } from "./API";
 import { QuestionState, Difficulty } from "./API";
 // components
 import QuestionCard from "./components/QuestionCard";
+// styles
+import { GlobleStyle } from "./App.styles";
 
 export type AswerObject = {
   question: string;
@@ -76,6 +78,8 @@ const App = () => {
   };
 
   return (
+    <>
+    <GlobleStyle />
     <div className="App">
       <h1>REACT QUIZ</h1>
       {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
@@ -84,7 +88,7 @@ const App = () => {
         </button>
       ) : null}
 
-      {!gameOver ? <p className="score">Score:</p> : null}
+      {!gameOver ? <p className="score">Score: {score}</p> : null}
       {loading && <p>Loading Questions ...</p>}
       {!loading && !gameOver && (
         <QuestionCard
@@ -106,6 +110,7 @@ const App = () => {
         </button>
       ) : null}
     </div>
+    </>
   );
 };
 
