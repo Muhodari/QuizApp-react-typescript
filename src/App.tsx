@@ -23,7 +23,7 @@ const App = () => {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
 
-  console.log(questions);
+  
 
   const startTrivia = async () => {
     setLoading(true);
@@ -81,7 +81,7 @@ const App = () => {
     <>
     <GlobleStyle />
     <Wrapper>
-      <h1>REACT QUIZ</h1>
+      <h1>General knowledge QUIZ</h1>
       {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
         <button className="start" onClick={startTrivia}>
           Start
