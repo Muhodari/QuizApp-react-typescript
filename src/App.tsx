@@ -40,6 +40,8 @@ const App = () => {
     setLoading(false);
   };
 
+
+  
   const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
     if(!gameOver){
       // user answers
